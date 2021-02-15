@@ -1,0 +1,93 @@
+[
+    {
+         "attacker": "normal",
+         "notVeryEffective" : ["rock", "steel"],
+         "notEffective" : ["ghost"]
+    },
+    {
+         "attacker": "fighting",
+         "superEffective" : ["normal", "rock", "steel", "ice", "dark"],
+         "notVeryEffective" : ["flying", "poison", "bug", "psychic"],
+         "notEffective": ["ghost"]
+    },
+    {
+         "attacker": "flying",
+         "superEffective" : ["fighting", "bug", "grass"],
+         "notVeryEffective" : ["rock", "steel", "electric"]
+    },
+    {
+        "attacker": "poison",
+        "superEffective" : ["grass"],
+        "notVeryEffective" : ["poison", "ground", "rock", "ghost"],
+        "notEffective" : ["steel"]
+    },
+    {
+        "attacker": "ground",
+        "superEffective" : ["poison", "rock", "steel", "fire", "electric"],
+        "notVeryEffective" : ["bug", "grass"],
+        "notEffective" : ["flying"]
+    },
+    {
+         "attacker": "rock",
+         "superEffective" : ["flying", "bug", "fire", "ice"],
+         "notVeryEffective" : ["fighting", "ground", "steel"]
+    },
+    {
+         "attacker": "bug",
+         "superEffective" : ["grass", "psychic", "dark"],
+         "notVeryEffective" : ["fighting", "flying", "poison", "ghost", "steel", "fire"]
+    },
+    {
+         "attacker": "ghost",
+         "superEffective" : ["ghost", "psychic"],
+         "notVeryEffective" : ["steel", "dark"],
+         "notEffective" : ["normal"]
+    },
+    {
+         "attacker": "steel",
+         "superEffective" : ["rock", "ice"],
+         "notVeryEffective" : ["steel", "fire", "water", "electric"]
+    },
+    {
+         "attacker": "fire",
+         "superEffective" : ["bug", "steel", "grass", "ice"],
+         "notVeryEffective" : ["rock", "fire", "water", "dragon"]
+    },
+    {
+         "attacker": "water",
+         "superEffective" : ["ground", "rock", "fire"],
+         "notVeryEffective" : ["water", "grass", "dragon"]
+    },
+    {
+         "attacker": "grass",
+         "superEffective" : ["ground", "rock", "water"],
+         "notVeryEffective" : ["flying", "poison", "bug", "steel", "fire", "grass", "dragon"]
+    },
+    {
+         "attacker": "electric",
+         "superEffective" : ["flying", "water"],
+         "notVeryEffective" : ["grass", "electric", "dragon"],
+         "notEffective" : ["ground"]
+    },
+    {
+         "attacker": "psychic",
+         "superEffective" : ["fighting", "poison"],
+         "notVeryEffective" : ["steel", "psychic"],
+         "notEffective" : ["dark"]
+    },
+    {
+         "attacker": "ice",
+         "superEffective" : ["flying", "ground", "grass", "dragon"],
+         "notVeryEffective" : ["steel", "fire", "water", "ice"]
+    },
+    {
+         "attacker": "dragon",
+         "superEffective" : ["dragon"],
+         "notVeryEffective" : ["steel"]
+    },
+    {
+         "attacker": "dark",
+         "superEffective" : ["ghost", "psychic"],
+         "notVeryEffective" : ["fighting", "steel", "dark"]
+    }
+]
