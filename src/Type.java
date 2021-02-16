@@ -17,5 +17,9 @@ public enum Type {
     GHOST,
     DRAGON,
     DARK,
-    STEEL
+    STEEL;
+
+    public String toString() {
+        return name().charAt(0) + name().substring(1).toLowerCase();
+    }
 }

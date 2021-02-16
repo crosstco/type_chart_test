@@ -27,7 +27,7 @@ public class TypeChart {
     // Print every matchup and relative effectiveness for every entry in the chart. Not formatted or organized however.
     public static void printTypeChart() {
         typeChart.entrySet().forEach(entry->{
-            System.out.println("Attacker: " + entry.getKey().getAttacker() + " Defender: " + entry.getKey().getDefender() + " " + entry.getValue());
+            System.out.printf("Attacker: %s Defender %s %s\n", entry.getKey().getAttacker(), entry.getKey().getDefender(), entry.getValue());
         });
     }
 

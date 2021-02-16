@@ -1,0 +1,70 @@
+[
+    {
+        "name": "Black",
+        "type": "Dark"
+    },
+    {
+        "name": "Blue",
+        "type": "Water"
+    },
+    {
+        "name": "Brown",
+        "type": "Ground"
+    },
+    {
+        "name": "Clear",
+        "type": "Ice"
+    },
+    {
+         "name": "Gold",
+         "type": "Psychic"
+    },
+    {
+         "name": "Grass",
+         "type": "Grass"
+    },
+    {
+         "name": "Gray",
+         "type": "Rock"
+    },
+    {
+         "name": "Green",
+         "type": "Bug"
+    },
+    {
+         "name": "Orange",
+         "type": "Fighting"
+    },
+    {
+         "name": "Pink",
+         "type": "Poison"
+    },
+    {
+         "name": "Purple",
+         "type": "Ghost"
+    },
+    {
+         "name": "Red",
+         "type": "Fire"
+    },
+    {
+         "name": "Royal",
+         "type": "Dragon"
+    },
+    {
+         "name": "Silver",
+         "type": "Steel"
+    },
+    {
+         "name": "Sky",
+         "type": "Flying"
+    },
+    {
+         "name": "White",
+         "type": "Normal"
+    },
+    {
+         "name": "Yellow",
+         "type": "Electric"
+    }
+]
