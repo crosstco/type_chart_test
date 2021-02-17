@@ -3,9 +3,10 @@
 public class AttackInformation {
 
     private String attacker;
-    private String[] superEffective;
-    private String[] notVeryEffective;
-    private String[] notEffective;
+    private Type[] superEffective;
+    private Type[] notVeryEffective;
+    private Type[] notEffective;
+
 
     public String getAttacker() {
         return attacker;
@@ -15,27 +16,27 @@ public class AttackInformation {
         this.attacker = attacker;
     }
 
-    public String[] getSuperEffective() {
+    public Type[] getSuperEffective() {
         return superEffective;
     }
 
-    public void setSuperEffective(String[] superEffective) {
+    public void setSuperEffective(Type[] superEffective) {
         this.superEffective = superEffective;
     }
 
-    public String[] getNotVeryEffective() {
+    public Type[] getNotVeryEffective() {
         return notVeryEffective;
     }
 
-    public void setNotVeryEffective(String[] notVeryEffective) {
+    public void setNotVeryEffective(Type[] notVeryEffective) {
         this.notVeryEffective = notVeryEffective;
     }
 
-    public String[] getNotEffective() {
+    public Type[] getNotEffective() {
         return notEffective;
     }
 
-    public void setNotEffective(String[] notEffective) {
+    public void setNotEffective(Type[] notEffective) {
         this.notEffective = notEffective;
     }
 }

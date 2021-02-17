@@ -1,4 +1,5 @@
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.File;
@@ -27,11 +28,11 @@ public class TypeChart {
     // Print every matchup and relative effectiveness for every entry in the chart. Not formatted or organized however.
     public static void printTypeChart() {
         typeChart.entrySet().forEach(entry->{
-            System.out.printf("Attacker: %s Defender %s %s\n", entry.getKey().getAttacker(), entry.getKey().getDefender(), entry.getValue());
+            System.out.printf("%s => %s %s\n", entry.getKey().getAttacker(), entry.getKey().getDefender(), entry.getValue());
         });
     }
 
-    // Generate a type chart for the given
+    // Generate a type chart from the given attack information
     private static void generateTypeChart(String matchupFilePath) {
 
         // Create new HashMap to hold the values
@@ -51,8 +52,11 @@ public class TypeChart {
         // Extract JSON attack information from provided JSON file using Jackson.
         try {
             File matchupFile = new File(matchupFilePath);
+
             ObjectMapper mapper = new ObjectMapper();
-            attackInformationList = mapper.readValue(matchupFile, new TypeReference<List<AttackInformation>>(){});
+            mapper.configure(DeserializationFeature.READ_ENUMS_USING_TO_STRING, true);
+
+            attackInformationList = mapper.readValue(matchupFile, new TypeReference<>(){});
         } catch (Exception e) {
             System.out.println("Error parsing matchup information");
             e.printStackTrace();
@@ -69,8 +73,7 @@ public class TypeChart {
 
             // Populate super effective attacks for attacker type if they exist (i.e. in the case of NORMAL, they do not.)
             if (attackInformation.getSuperEffective() != null) {
-                for (String defenderString : attackInformation.getSuperEffective()) {
-                    Type defender = Type.valueOf(defenderString.toUpperCase());
+                for (Type defender : attackInformation.getSuperEffective()) {
                     matchup = new TypeMatchup(attacker, defender);
                     typeChart.put(matchup, Effectiveness.SUPER_EFFECTIVE);
                 }
@@ -78,8 +81,7 @@ public class TypeChart {
 
             // Populate not very effective attacks for attacker type if they exist.
             if (attackInformation.getNotVeryEffective() != null) {
-                for (String defenderString : attackInformation.getNotVeryEffective()) {
-                    Type defender = Type.valueOf(defenderString.toUpperCase());
+                for (Type defender : attackInformation.getNotVeryEffective()) {
                     matchup = new TypeMatchup(attacker, defender);
                     typeChart.put(matchup, Effectiveness.NOT_VERY_EFFECTIVE);
                 }
@@ -87,8 +89,7 @@ public class TypeChart {
 
             // Populate ineffective attacks for attacker type if they exist.
             if (attackInformation.getNotEffective() != null) {
-                for (String defenderString : attackInformation.getNotEffective()) {
-                    Type defender = Type.valueOf(defenderString.toUpperCase());
+                for (Type defender : attackInformation.getNotEffective()) {
                     matchup = new TypeMatchup(attacker, defender);
                     typeChart.put(matchup, Effectiveness.NOT_EFFECTIVE);
                 }
