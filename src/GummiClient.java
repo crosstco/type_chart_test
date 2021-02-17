@@ -11,6 +11,20 @@ public class GummiClient {
 
     public static void main(String[] args) {
 
+        // Input Validation
+        if (args.length <= 0 || args.length > 2) {
+            System.out.println("Usage: GummiClient type1 [type2]");
+            exit(-1);
+        }
+
+        // Check if supplied type[s] are valid.
+        for (String arg : args) {
+            if (!Type.contains(arg.toUpperCase())) {
+                System.out.printf("\"%s\" is not a valid type.", arg);
+                exit(-1);
+            }
+        }
+
         List<Gummi> gummiList = generateGummiList("resources/gummis.json");
 
         Map<Gummi, Integer> gummiIQMap = new HashMap<>();
@@ -72,7 +86,7 @@ public class GummiClient {
             ObjectMapper mapper = new ObjectMapper();
             mapper.configure(DeserializationFeature.READ_ENUMS_USING_TO_STRING, true);
 
-            gummiList = mapper.readValue(gummiFile, new TypeReference<List<Gummi>>(){});
+            gummiList = mapper.readValue(gummiFile, new TypeReference<>(){});
 
         } catch (Exception e) {
             System.out.println("Error parsing gummi information");
